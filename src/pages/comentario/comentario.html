@@ -1,0 +1,23 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Comentario</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <h5 text-center>Sección para hacer comentarios al encargado de esta oficina</h5>
+  <p>Los comentarios que realices solo serán leidos por el encargado de esta area</p>
+
+  <p><strong>Para: </strong>{{datosOficina.encargado}}</p>
+
+  <ion-textarea rows="10" [(ngModel)]="comentario" ></ion-textarea>
+
+  <div text-right>
+    <button ion-button color="secondary" (click)="enviarComentario()">Enviar</button>
+  </div>
+</ion-content>

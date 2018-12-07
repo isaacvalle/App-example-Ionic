@@ -1,0 +1,38 @@
+page-cita {
+  .fondo {
+    background-color: #e8e8e8;
+  }
+
+  .contenido, .calendario, .horarios {
+    margin: 6px auto 8px auto;
+    width: 98%;
+  }
+
+  .instruccion {
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .reservacion{
+    font-size: 14px;
+    font-weight: 500;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .secretaria{
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .disponibles {
+    font-size: 18px;
+    font-weight: bold;
+    // padding-top: 0;
+    // padding-bottom: 0;
+  }
+}

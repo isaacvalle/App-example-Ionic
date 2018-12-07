@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-navbar>
+
+    <ion-buttons left>
+      <button ion-button [menuToggle]="menuActive()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title>
+      Perfil
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content fullscreen>
+  <ion-list no-margin margin-horizontal>
+      <ion-list-header no-margin>
+        <ion-avatar item-start>
+          <img [src]="user.imageUrl ? user.imageUrl : placeholderPicture">
+        </ion-avatar>
+        <p class="username">{{user.name}}</p>
+        Número de control: {{user.ctrlNumber}}
+      </ion-list-header>
+    </ion-list>
+    <ion-list padding no-border no-lines>
+      <ion-list-header>
+        Próximas citas
+      </ion-list-header>
+      <ion-card *ngFor="let cita of misCitas" class="evento">
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col text-uppercase col-2>
+              <div margin-vertical class="center">
+                <span class="fecha">{{cita.fechacard.diaSema}}</span><br>
+                <span class="numero">{{cita.fechacard.dia}}</span><br>
+                <span class="fecha">{{cita.fechacard.mes}}</span>
+              </div>
+            </ion-col>
+            <ion-col col-10>
+              <ion-row margin-horizontal class="divisor">
+                  <ion-col text-justify padding-top>
+                    <ion-note>Hora</ion-note><br>
+                    <span class="descripcion">{{cita.horario}}</span>
+                  </ion-col>
+                  <ion-col text-justify padding-top>
+                    <ion-note>Secretaría</ion-note><br>
+                    <span class="descripcion">{{cita.titulo}}</span>
+                  </ion-col>
+              </ion-row>
+              <ion-row padding-horizontal>
+                <ion-col text-justify padding-top>
+                  <ion-note>Director</ion-note><br>
+                  <span class="descripcion">{{cita.encargado}}</span>
+                </ion-col>
+                <ion-col padding-top>
+                  <button color="danger" small ion-button>Cancelar</button>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card>
+    </ion-list>
+    <ion-list no-lines no-margin margin-horizontal>
+      <ion-list-header>
+        Other
+      </ion-list-header>
+      <ion-item>
+        <ion-icon name='power' item-start></ion-icon>
+        <button ion-button item-end>
+        Logout
+        </button>
+      </ion-item>
+    </ion-list>
+</ion-content>

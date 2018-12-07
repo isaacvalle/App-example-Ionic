@@ -1,0 +1,48 @@
+page-oficina {
+  .fondo {
+    background-color: #e8e8e8;
+  }
+
+  .header-image {
+      // background-image: url(https://picsum.photos/900/500?image=799);
+      height: 30vh;
+      background-size: cover;
+      background-position: center center;
+      position: relative;
+      z-index: -1;
+  }
+  .main-content {
+      margin-top: -20px;
+      margin-left: 10px;
+      margin-right: 10px;
+      padding: 20px;
+      background-color: white;
+      -webkit-box-shadow: 0px 0px 55px -16px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 0px 0px 55px -16px rgba(0, 0, 0, 0.75);
+      box-shadow: 0px 0px 55px -16px rgba(0, 0, 0, 0.75);
+      // background: #F5F5F5;
+      position: relative !important;
+  }
+
+  .profile-description {
+      font-size: 15px;
+      color: #888;
+  }
+
+  .contenedorImg{
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 0 auto;
+    position: inherit;
+    -webkit-border-radius: 150px;
+    -moz-border-radius: 150px;
+    border: solid white;
+    background-size: 100%;
+    margin-top: -70px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}

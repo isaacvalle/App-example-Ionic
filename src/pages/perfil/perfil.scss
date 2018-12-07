@@ -1,0 +1,42 @@
+page-perfil {
+
+  .evento {
+    position: relative;
+    text-align: center;
+    margin: 3px 5px 5px 5px !important;
+    width: auto;
+  }
+
+  .center {
+    // position: relative;
+    border-right: 1px solid #ddd;
+  }
+
+  .divisor {
+    border-bottom: 1px solid #ddd;
+  }
+
+  .fecha {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #ef1414;
+  }
+
+  .numero {
+    font-size: 2em;
+    font-weight: bolder;
+  }
+
+  .descripcion {
+    font-size: 1em;
+    color: #424242;
+  }
+
+  .username {
+    font-size: 1.3em;
+  }
+
+  .label {
+    color: #7f7f7f;
+  }
+}

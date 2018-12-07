@@ -1,0 +1,74 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Reservación</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="fondo">
+  <ion-card padding class="contenido">
+    <ion-card-header text-wrap no-padding class="instruccion">Para reservar su cita siga los pasos que a continuación se presentan:</ion-card-header>
+    <ion-list no-lines>
+      <ion-item>
+        <p text-wrap>
+          &bull;Seleccione el día en el que desea realizar su cita.
+        </p>
+      </ion-item>
+      <ion-item>
+        <p text-wrap>
+          &bull;Seleccione el horario disponible que desea
+        </p>
+      </ion-item>
+      <ion-item>
+        <p text-wrap>
+          &bull;Confirme su cita
+        </p>
+      </ion-item>
+    </ion-list>
+
+  </ion-card>
+
+  <ion-card class="calendario">
+    <ion-calendar [(ngModel)]="date"
+      (onChange)="onChange($event)"
+      [options]="options"
+      [type]="type"
+      [format]="'YYYY-MM-DD'">
+    </ion-calendar>
+  </ion-card>
+
+  <ion-card class="horarios">
+    <ion-card-header text-center class="disponibles">Horarios disponibles</ion-card-header>
+
+    <div>
+      <ion-row>
+        <ion-col text-center no-padding padding-bottom *ngFor="let citas of horarios" col-4>
+          <button strong ion-button [disabled]="citas.estado == 1" color="{{citas.color}}" (click)="botonCita(citas)">{{ citas.horario }}</button>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col col-8>
+        <ion-row>
+          <ion-col text-center>
+            <p no-margin class="reservacion">Reservar mi cita en:</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col text-center>
+            <p no-margin class="secretaria">{{datosCita.titulo}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col padding-vertical col-4><button ion-button (click)="eligeCita()" color="danger">Aceptar</button></ion-col>
+    </ion-row>
+
+  </ion-toolbar>
+</ion-footer>

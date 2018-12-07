@@ -1,0 +1,22 @@
+
+<ion-content padding>
+
+  <img src="assets/img/logo_stsge.png">
+
+    <ion-list class="lista">
+
+        <ion-item>
+          <ion-label floating>Número de control</ion-label>
+          <ion-input type="number" [(ngModel)]="numControl"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label floating>Contraseña</ion-label>
+          <ion-input type="password" [(ngModel)]="password"></ion-input>
+        </ion-item>
+      
+    </ion-list>
+
+    <button ion-button color="secondary" block large (click)="ingresar()">Ingresar</button>
+
+</ion-content>

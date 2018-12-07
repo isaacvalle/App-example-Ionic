@@ -1,1 +1,19 @@
-<ion-nav [root]="rootPage"></ion-nav>
+
+<ion-menu [content]="content" id="users">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title text-wrap style="padding: 0;">Bienvenido</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="fondoMenu">
+    <ion-list>
+      <button color="gray" menuClose ion-item *ngFor="let oficina of _op.oficinas" (click)="openPage(oficina)">
+        {{oficina.titulo}}
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

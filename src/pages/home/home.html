@@ -1,14 +1,39 @@
 <ion-header>
   <ion-navbar>
+
+    <ion-buttons left>
+      <button ion-button [menuToggle]="menuActive()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+
     <ion-title>
-      Ionic Blank
+      Noticias
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content text-center class="fondo">
+  <ion-card class="noticia" *ngFor="let noticia of _notiP.crearNoticia; let i = index">
+    <img src="{{noticia.imagen}}">
+    <ion-card-content no-padding>
+      <ion-item>
+        <ion-note item-start class="fecha">
+          {{noticia.fecha}}&nbsp;
+        </ion-note>
+        <ion-note item-start class="categoria">
+          <span class="dot">&bull; </span>
+          {{noticia.tema}}
+        </ion-note>
+      </ion-item>
+      <div>
+        <ion-card-header text-wrap text-left class="titulo">
+          {{noticia.titulo}}
+        </ion-card-header>
+      </div>
+      <p text-justify padding class="texto">{{noticia.substr}}
+        <span class="vermas" clear (click)="readMore(i)">{{ noticia.boton }}</span>
+      </p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

@@ -1,0 +1,53 @@
+<ion-header>
+
+  <ion-navbar>
+
+    <ion-buttons left icon-only>
+      <button ion-button [menuToggle]="menuActive()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title>{{datosOficina.titulo}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content parallax-header no-bounce class="fondo">
+  <div class="header-image">
+    <img src="{{datosOficina.portada}}">
+  </div>
+  <div class="main-content" text-wrap text-center>
+      <div class="contenedorImg">
+        <img src="{{datosOficina.perfil}}">
+      </div>
+      <h2>{{datosOficina.encargado}}</h2>
+      <p>Director de {{datosOficina.titulo}} &bull; Gobierno del Estado</p>
+      <p class="profile-description">{{datosOficina.descripcion}}</p>
+      <hr>
+      <div class="contededorBtns">
+        <button ion-button
+                block
+                text-capitalize
+                [navPush]="paginaCita"
+                [navParams]="{datosOficina: datosOficina}">
+            Agendar cita
+        </button>
+
+        <button ion-button
+                block>
+            Ayuda emergente
+        </button>
+
+        <button ion-button
+                block
+                [navPush]="paginaComentario"
+                [navParams]="{datosOficina: datosOficina}">
+            Hacer comentario
+        </button>
+
+      </div>
+  </div>
+
+</ion-content>
